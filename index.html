@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Sayangku</title>
+    <title>Selamat Ulang Tahun</title>
     
+    <!-- Memuat Tailwind CSS untuk styling yang rapi -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Memuat font dari Google Fonts: Playfair Display (Serif) & Inter (Sans-serif) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -13,145 +16,90 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0a0a0a; /* Warna dasar hitam pekat */
-            color: #f5f5f4;
-            overflow-x: hidden;
+            background-color: #fafaf9; /* Warna Tailwind stone-50 (Krem sangat lembut) */
+            color: #292524; /* Warna Tailwind stone-800 (Abu-abu gelap kecoklatan) */
         }
-
+        
         .font-playfair {
             font-family: 'Playfair Display', serif;
         }
 
-        /* Animasi panah turun yang lebih lembut (elegan) */
-        @keyframes gentleBounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(10px); }
-        }
-        .animate-gentle-bounce {
-            animation: gentleBounce 2s infinite ease-in-out;
+        /* Animasi fade in sederhana saat halaman dimuat */
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
         }
 
-        /* Transisi untuk efek fade-in saat di-scroll */
-        .reveal-element {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 1.2s cubic-bezier(0.5, 0, 0, 1);
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .reveal-element.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Delay untuk elemen yang muncul berurutan */
-        .delay-100 { transition-delay: 100ms; }
-        .delay-300 { transition-delay: 300ms; }
-        .delay-500 { transition-delay: 500ms; }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased selection:bg-stone-200 selection:text-stone-900">
 
-    <section id="slide1" class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+    <!-- BAGIAN 1: PEMBUKA -->
+    <section id="halaman-satu" class="min-h-screen w-full flex flex-col items-center justify-center px-6 py-12 text-center fade-in">
         
-        <!-- GANTI URL FOTO DI BAWAH INI UNTUK LATAR BELAKANG SLIDE 1 -->
-        <!-- Gunakan foto potret/landscape yang agak gelap atau memiliki ruang kosong -->
-        <div class="absolute inset-0 bg-[url('1000433703.png')] bg-cover bg-center"></div>
+        <p class="text-stone-500 text-xs md:text-sm tracking-[0.3em] uppercase mb-6">Sebuah Perayaan Sederhana</p>
         
-        <!-- Overlay gelap agar teks mudah dibaca (70% opacity hitam) -->
-        <div class="absolute inset-0 bg-black/70"></div>
+        <h1 class="font-playfair text-4xl md:text-6xl font-normal text-stone-800 mb-4 leading-tight">
+            Selamat Ulang Tahun.
+        </h1>
         
-        <!-- Konten Slide 1 -->
-        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
-            <p class="reveal-element text-stone-400 text-sm md:text-base tracking-[0.3em] uppercase mb-6">Sebuah Perayaan</p>
-            <h1 class="reveal-element delay-300 font-playfair text-5xl md:text-7xl lg:text-8xl font-normal text-stone-100 drop-shadow-lg">
-                Happy Birthday Sayangkuuu!!.
-            </h1>
-        </div>
+        <p class="text-stone-500 text-base md:text-lg max-w-md mt-4 mb-16 font-light">
+            Untuk seseorang yang selalu membuat hari-hariku menjadi jauh lebih baik.
+        </p>
 
-        <!-- Tombol Panah Lanjut ke Slide 2 -->
-        <a href="#slide2" class="absolute bottom-12 left-1/2 transform -translate-x-1/2 text-stone-400 hover:text-white transition-colors duration-300 z-20">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 animate-gentle-bounce stroke-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
+        <!-- Tombol Elegan menuju halaman 2 -->
+        <a href="#halaman-dua" class="inline-block border border-stone-400 text-stone-600 px-8 py-3 rounded-full text-sm tracking-wider hover:bg-stone-800 hover:text-stone-50 hover:border-stone-800 transition-all duration-300">
+            Baca pesanku ya
         </a>
+
     </section>
 
-    <section id="slide2" class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+    <!-- BAGIAN 2: SURAT CINTA -->
+    <section id="halaman-dua" class="min-h-screen w-full flex flex-col items-center justify-center px-8 py-12">
         
-        <!-- GANTI URL FOTO DI BAWAH INI UNTUK LATAR BELAKANG SLIDE 2 -->
-        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1499559858548-525997db7f1a?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center"></div>
-        
-        <!-- Overlay gradasi gelap -->
-        <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80"></div>
-        
-        <!-- Konten Slide 2 -->
-        <div class="relative z-10 text-center md:text-left px-8 max-w-3xl mx-auto">
-            <h2 class="reveal-element font-playfair text-3xl md:text-4xl text-stone-200 mb-8 italic">Teruntuk kamu,</h2>
-            <div class="reveal-element delay-300 space-y-6 text-stone-300 leading-relaxed text-lg md:text-xl font-light">
+        <div class="max-w-2xl mx-auto text-center md:text-left">
+            <h2 class="font-playfair text-3xl md:text-4xl text-stone-700 mb-8 italic">Teruntuk kamu,</h2>
+            
+            <div class="space-y-6 text-stone-600 leading-relaxed text-base md:text-lg font-light">
                 <p>
-                    Tidak ada keriuhan yang berlebihan hari ini. Hanya ada aku, kamu, dan rasa syukur yang begitu besar karena semesta masih memberikan waktu untuk kita merayakannya bersama.
+                    Hari ini adalah milikmu. Tidak ada keriuhan atau perayaan yang berlebihan di sini, hanya ada kata-kata sederhana dan rasa syukur yang tulus karena semesta masih memberikan waktu untuk kita berjalan bersama.
                 </p>
                 <p>
-                    Terima kasih telah menjadi rumah tempatku pulang, dan pelukan paling menenangkan setelah hari yang panjang.
+                    Terima kasih sudah menjadi sosok pendengar yang baik, tempatku bersandar ketika lelah, dan alasan di balik banyak senyumanku akhir-akhir ini. Memilikimu adalah hal tenang yang selalu aku syukuri setiap hari.
                 </p>
+                <p>
+                    Semoga di umur yang baru ini, kamu dijauhkan dari hal-hal yang membuatmu sedih, dan didekatkan dengan segala kebaikan yang pantas kamu dapatkan.
+                </p>
+            </div>
+            
+            <div class="mt-16 flex justify-center md:justify-start">
+                <!-- Tombol Elegan menuju halaman 3 -->
+                <a href="#halaman-tiga" class="inline-block border border-stone-400 text-stone-600 px-8 py-3 rounded-full text-sm tracking-wider hover:bg-stone-800 hover:text-stone-50 hover:border-stone-800 transition-all duration-300">
+                    Satu hal lagi...
+                </a>
             </div>
         </div>
 
-        <!-- Tombol Panah Lanjut ke Slide 3 -->
-        <a href="#slide3" class="absolute bottom-12 left-1/2 transform -translate-x-1/2 text-stone-400 hover:text-white transition-colors duration-300 z-20">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 animate-gentle-bounce stroke-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-        </a>
     </section>
 
-    <section id="slide3" class="relative w-full h-screen flex items-center justify-center overflow-hidden">
+    <!-- BAGIAN 3: PENUTUP -->
+    <section id="halaman-tiga" class="min-h-screen w-full flex flex-col items-center justify-center px-6 py-12 text-center">
         
-        <!-- GANTI URL FOTO DI BAWAH INI UNTUK LATAR BELAKANG SLIDE 3 -->
-        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center"></div>
+        <h2 class="font-playfair text-4xl md:text-5xl text-stone-800 mb-8 leading-tight">
+            Semoga bahagia<br>selalu menyertaimu.
+        </h2>
         
-        <!-- Overlay gelap tebal -->
-        <div class="absolute inset-0 bg-black/70"></div>
+        <p class="text-stone-500 text-lg md:text-xl font-light italic mb-12">
+            Aku mencintaimu, hari ini dan selamanya.
+        </p>
         
-        <!-- Konten Slide 3 -->
-        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
-            <h2 class="reveal-element font-playfair text-4xl md:text-6xl text-stone-100 mb-6 leading-tight">
-                Semoga bahagia selalu menyertaimu.
-            </h2>
-            <p class="reveal-element delay-300 text-stone-400 text-lg md:text-xl font-light italic mb-12">
-                Aku mencintaimu, hari ini dan selamanya.
-            </p>
-            
-            <div class="reveal-element delay-500 w-16 h-px bg-stone-500 mx-auto"></div>
-        </div>
-        
-        <!-- Tidak ada tombol panah di slide terakhir -->
+        <!-- Garis pembatas kecil sebagai pemanis desain -->
+        <div class="w-12 h-px bg-stone-400 mx-auto"></div>
+
     </section>
 
-    <script>
-        // Logika untuk memunculkan elemen secara sinematik saat di-scroll
-        document.addEventListener("DOMContentLoaded", function() {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.3 // Elemen akan muncul ketika 30% bagiannya terlihat di layar
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        // Optional: Berhenti mengamati jika ingin animasinya hanya jalan 1x
-                        // observer.unobserve(entry.target); 
-                    } else {
-                        // Hapus class visible jika ingin animasi terulang saat di-scroll ke atas lagi
-                        entry.target.classList.remove('visible');
-                    }
-                });
-            }, observerOptions);
-
-            const elementsToReveal = document.querySelectorAll('.reveal-element');
-            elementsToReveal.forEach(el => observer.observe(el));
-        });
-    </script>
 </body>
 </html>
